@@ -4,6 +4,5 @@ special driver and RFM69 code on Raspberry Pi 3 B running WeeWX listening to a D
 Raspberry Pi 3 B running WeeWX software with “home made” Python programs to interface between the Davis ISS (integrated sensor suite) wireless signal and the Weewx software. These “home made” programs are mypiweewxdriver.py, Dissdata.py, DissRFM69.py, DissRFM69registers.py.  There is also a Dissexample.py that is test code to check receipt of the Davis ISS packets. 
 
 Dissdata.py reads the RFM69 radio receiver and uses DissRFM69.py and DissRFM69registers.py. It outputs 2 files on /var/ramdisk wxdata and bucket which mypiweewxdriver.py uses to feed Weewx the data it needs, temperature, rain, wind, wind direction, etc. The Raspberry Pi also has a BME-280 barometer, humidity and temperature (indoor temp) instrument which is used by Dissdata.py as well as a real time clock. The RTC is used by the Raspberry Pi system.
-
-In addition there is a line added to rc.local to start the Dissdata.py program upon bootup.  
+In addition there is a line added to /etc/rc.local to start the Dissdata.py program upon bootup.  
 python3 /home/weewx/bin/user/Dissdata.py
