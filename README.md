@@ -6,3 +6,12 @@ Raspberry Pi 3 B running WeeWX software with “home made” Python programs to 
 Dissdata.py reads the RFM69 radio receiver and uses DissRFM69.py and DissRFM69registers.py. It outputs 2 files on /var/ramdisk wxdata and bucket which mypiweewxdriver.py uses to feed Weewx the data it needs, temperature, rain, wind, wind direction, etc. The Raspberry Pi also has a BME-280 barometer, humidity and temperature (indoor temp) instrument which is used by Dissdata.py as well as a real time clock. The RTC is used by the Raspberry Pi system.
 In addition there is a line added to /etc/rc.local to start the Dissdata.py program upon bootup.  
 python3 /home/weewx/bin/user/Dissdata.py
+
+Ramdisk 
+edit /etc/fstab
+add the line 
+tmpfs /var/ramdisk tmpfs nodev,nosuid,size=1M 0 0
+
+WeeWX is added using the setup.py since we modified it and want to add a driver and other py nonstandard programs (DissRFM69.py etc)
+
+ 
