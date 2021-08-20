@@ -7,11 +7,17 @@ Dissdata.py reads the RFM69 radio receiver and uses DissRFM69.py and DissRFM69re
 In addition there is a line added to /etc/rc.local to start the Dissdata.py program upon bootup.  
 python3 /home/weewx/bin/user/Dissdata.py
 
+There is also a Dissexample.py that is test code to check receipt of the Davis ISS packets. 
+Dissexample.py uses DissRFM69.py and DissRFM69registers.py to work - output is on terminal
+
 Ramdisk 
 edit /etc/fstab
 add the line 
 tmpfs /var/ramdisk tmpfs nodev,nosuid,size=1M 0 0
 
 WeeWX is added using the setup.py since we modified it and want to add a driver and other py nonstandard programs (DissRFM69.py etc)
+
+In /home/weewx/bin/user is where I put the 4 python files Dissdata.py DissRFM69.py DissRFM69registers.py mypiweewxdriver.py
+
 
  
