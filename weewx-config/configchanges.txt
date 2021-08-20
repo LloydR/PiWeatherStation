@@ -1,0 +1,18 @@
+    # Set to type of station hardware. There must be a corresponding stanza
+    # in this file with a 'driver' parameter indicating the driver to be used.
+    station_type = mypiweewxdriver
+
+
+##############################################################################
+
+[mypiweewxdriver]
+     # This section for the custom pi3 python weewx driver
+
+     # The time in seconds between loop packets
+     loop_interval = 2.54
+
+     # The driver to use:
+     driver = user.mypiweewxdriver
+#############################################################################
+
+
